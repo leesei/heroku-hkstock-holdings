@@ -1,0 +1,29 @@
+{
+  "name": "heroku-hkstock-holdings",
+  "version": "0.1.0",
+  "description": "Service that scrapes HKExnews and visualize the data",
+  "author": {
+    "name": "KY LEE",
+    "email": "leesei@gmail.com",
+    "url": "http://leesei.github.io/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/leesei/heroku-hkstock-holdings.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leesei/heroku-hkstock-holdings/issues"
+  },
+  "keywords": [
+    "scrape",
+    "stock",
+    "json",
+    "visualization"
+  ],
+  "dependencies": {
+    "hkstock-holdings": "git+https://github.com/leesei/node-hkstock-holdings.git",
+    "express": "*",
+    "lodash": "*"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,46 @@
+.panel {
+  position: absolute;
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: wrap;
+}
+
+#participant-list {
+  display: none; /* hidden by default */
+  margin-left: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: wrap;
+}
+
+/*
+   color code each cluster
+   look up color name [here](http://www.color-hex.com/) and
+   generate gradient [here](http://www.herethere.net/~samson/php/color_gradient/)
+ */
+tr[cluster="0"] {
+  color: MediumBlue;
+}
+tr[cluster="1"] {
+  color: #1A1AB4;
+}
+tr[cluster="2"] {
+  color: #34349B;
+}
+tr[cluster="3"] {
+  color: #4E4E82;
+}
+tr[cluster="4"] {
+  color: DimGray;
+}
+
+.expander {
+  /* extents height of parent container with all children being float */
+  content: ".";
+  display: block;
+  float: none;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}

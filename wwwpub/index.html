@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>HK Stock Holdings</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="/main.css">
+<body>
+
+<div class="panel">
+	<form action="">
+	<input id="stock-code" type="text"></input>
+	<input id="reset" type="button" value="Reset">
+	<input id="submit" type="submit" value="Plot">
+	</form>
+</div>
+
+<div id="participant-list" class="list-holder">
+	<table border="1" cellpadding="2">
+		<tbody>
+			<tr>
+				<th></th>
+				<th>Name</th>
+				<th>Avg. Shares</th>
+				<th>σ/x&#772;</th>
+				<th>Vol.</th>
+				<th>Vol./x&#772;</th>
+				<th>Buy Vol.</th>
+				<th>Sell Vol.</th>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+</body>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+<script src="//code.highcharts.com/highcharts.js"></script>
+<script src="//code.highcharts.com/modules/exporting.js"></script>
+<script src="/kmeans.js"></script>
+<script src="/main.js"></script>
+
+</html>
