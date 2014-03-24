@@ -23,9 +23,10 @@ app.get('/hkstock-holdings/:code', function(req, res){
   today.setHours(0, 0, 0);
 
   var opts = {};
+  var period = req.query.period || { days: 14 };
   opts.code = padZeros(req.params.code, 5);
   opts.timePeriod = {
-    startDate: today.getPrevDay(29),
+    startDate: today.getPrevDay(period.days - 1),
     endDate: today
   };
   console.log(opts);

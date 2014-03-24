@@ -7,34 +7,88 @@
 </head>
 
 <link rel="stylesheet" type="text/css" href="/main.css">
-<body>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css">
+
+<body class="container">
 
 <div class="panel">
 	<form action="">
-	<input id="stock-code" type="text"></input>
-	<input id="reset" type="button" value="Reset">
-	<input id="submit" type="submit" value="Plot">
+		<fieldset id="panel-stock-options">
+			<legend><b>Stock options</b></legend>
+			<div class="form-horizontal">
+				<input class="input-mini" type="text" name="code" id="stock-code" ></input>
+				<input class="btn btn-primary" type="submit" id="submit" value="Submit"></input>
+			</div>
+			<div>
+				<label class="radio inline">
+					<input type="radio" name="period" value="7"/>1w
+				</label>
+				<label class="radio inline">
+					<input type="radio" name="period" value="14" checked="true"/>2w
+				</label>
+				<label class="radio inline">
+					<input type="radio" name="period" value="30"/>1m
+				</label>
+			</div>
+			<div>
+				<label class="radio inline">
+					<input type="radio" name="period" value="90"/>3m
+				</label>
+				<label class="radio inline">
+					<input type="radio" name="period" value="180"/>6m
+				</label>
+				<label class="radio inline">
+					<input type="radio" name="period" value="365"/>1y
+				</label>
+			</div>
+		</fieldset>
+		<fieldset id="panel-chart-options" class="hidden">
+			<legend><b>Chart options</b></legend>
+			<button id="select-none">Select None</button>
+		</fieldset>
 	</form>
 </div>
 
-<div id="participant-list" class="list-holder">
-	<table border="1" cellpadding="2">
-		<tbody>
+<div id="table-container">
+ <!-- border="1" cellpadding="2" -->
+	<table width="100%">
+		<!-- header with span -->
+		<thead>
+			<tr>
+				<th rowspan="2"></th>
+				<th rowspan="2">Name</th>
+				<th rowspan="2">Avg. Shares (x&#772;)</th>
+				<th rowspan="2">σ/x&#772;</th>
+				<th colspan="4">Volume</th>
+			</tr>
+			<tr>
+				<th>Total</th>
+				<th>Total/x&#772;</th>
+				<th>Buy</th>
+				<th>Sell</th>
+			</tr>
+		</thead>
+		<!-- simple header -->
+		<!-- <thead>
 			<tr>
 				<th></th>
 				<th>Name</th>
-				<th>Avg. Shares</th>
+				<th>Avg. Shares (x&#772;)</th>
 				<th>σ/x&#772;</th>
-				<th>Vol.</th>
-				<th>Vol./x&#772;</th>
+				<th>Volume</th>
+				<th>Volume/x&#772;</th>
 				<th>Buy Vol.</th>
 				<th>Sell Vol.</th>
 			</tr>
+		</thead> -->
+		<tbody id="participant-list">
 		</tbody>
 	</table>
 </div>
 
-<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<div id="chart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 </body>
 
@@ -42,7 +96,10 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
 <script src="//code.highcharts.com/highcharts.js"></script>
-<script src="//code.highcharts.com/modules/exporting.js"></script>
+<!-- <script src="//code.highcharts.com/modules/exporting.js"></script> -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
 <script src="/kmeans.js"></script>
 <script src="/main.js"></script>
 

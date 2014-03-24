@@ -1,17 +1,20 @@
-.panel {
-  position: absolute;
-  width: 300px;
-  max-height: 400px;
-  overflow-y: auto;
-  overflow-x: wrap;
+.hidden {
+  display: none;
 }
 
-#participant-list {
-  display: none; /* hidden by default */
-  margin-left: 300px;
+.panel {
+  position: absolute;
+  width: 290px;
+  margin-right: 10px;
   max-height: 400px;
   overflow-y: auto;
-  overflow-x: wrap;
+}
+
+#table-container {
+  display: none; /* hidden by default */
+  margin-left: 300px;
+  height: 400px;
+  overflow-y: auto;
 }
 
 /*
