@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "hkstock-holdings": "git+https://github.com/leesei/node-hkstock-holdings.git",
-    "express": "*",
+    "express": "~3.x.x",
     "lodash": "*"
   },
   "license": "MIT"
