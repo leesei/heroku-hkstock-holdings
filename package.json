@@ -1,6 +1,6 @@
 {
   "name": "heroku-hkstock-holdings",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Service that scrapes HKExnews and visualize the data",
   "author": {
     "name": "KY LEE",
