@@ -22,8 +22,10 @@ app.get('/hkstock-holdings/:code', function(req, res){
   var today = new Date();
   today.setHours(0, 0, 0);
 
-  var opts = {};
   var period = req.query.period || { days: 14 };
+  // console.log(req.query);
+
+  var opts = {};
   opts.code = padZeros(req.params.code, 5);
   opts.timePeriod = {
     startDate: today.getPrevDay(period.days - 1),
@@ -61,6 +63,7 @@ app.get('/hkstock-holdings/local/:code', function(req, res){
 });
 
 app.use(express.static(__dirname + '/wwwpub'));
+
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
     console.log("Listening on " + port);

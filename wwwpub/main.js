@@ -151,7 +151,6 @@ $(document).ready(function () {
         text: result.code + ' - ' + result.name,
         x: -20 //center
       },
-
       subtitle: {
         text: 'Source: HKExnews.hk',
         floating: true,
@@ -184,7 +183,8 @@ $(document).ready(function () {
         layout: 'vertical',
         align: 'right',
         verticalAlign: 'middle',
-        borderWidth: 0
+        borderWidth: 0,
+        width: 200,
       },
       plotOptions: {
         line: {
